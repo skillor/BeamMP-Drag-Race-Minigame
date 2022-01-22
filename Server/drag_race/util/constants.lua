@@ -1,0 +1,5 @@
+return {
+    PRESTAGE_TIME_LIMIT = 40,
+    COUNTDOWN_TIMER = 7,
+    RACE_TIME_LIMIT = 40,
+}
