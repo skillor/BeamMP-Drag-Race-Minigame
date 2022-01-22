@@ -2,6 +2,8 @@ local ticker = require('tickers/ticker')
 local network = require('network/network')
 
 function onInit()
+    print("Loading drag race minigame")
+
     MP.RegisterEvent("tick", "tick")
     MP.CreateEventTimer("tick", 1000) --start ticking immediately
 
