@@ -22,7 +22,15 @@ local function syncState(state)
     ui.sync(currentServerState)
 end
 
+local function onClientPostStartMission()
+    if MPCoreNetwork and MPCoreNetwork.isMPSession() then
+        AddEventHandler('UIMessage', dragRace.uiMessage)
+        AddEventHandler('SyncRaceState', dragRace.syncState)
+    end
+end
+
 return {
+    onClientPostStartMission = onClientPostStartMission,
     onPreRender = callbacks.onPreRender,
     onBeamNGTrigger = callbacks.onBeamNGTrigger,
     showSPDialog = ui.showSPDragRaceDialog,
